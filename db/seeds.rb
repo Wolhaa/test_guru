@@ -35,6 +35,6 @@ answers = Answer.create([
 ])
 
 test_users = TestsUser.create([
-  { user_id: users[0].id, test_id: tests[0].id },
-  { user_id: users[0].id, test_id: tests[1].id }
+  { user: users[0], test: tests[0] },
+  { user: users[0], test: tests[1]}
 ])

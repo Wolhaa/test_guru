@@ -1,10 +1,9 @@
 class User < ApplicationRecord
-  has_many :tests_user
+  has_many :tests_user, dependent: :nullify
   has_many :tests, through: :tests_user
-  has_many :tests
+  has_many :created_tests, class_name: 'Test', foreign_key: 'user_id'
 
   def tests_by_level(level)
-    Test.joins("INNER JOIN tests_users ON tests_users.test_id = tests.id")
-      .where(level: level, tests_users: { user_id: id })
+    tests.where(level: level)
   end
 end
