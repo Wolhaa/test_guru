@@ -16,21 +16,21 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Вычитание', level: 1, category_id: 1 },
-  { title: 'Сложение', category_id: 1 },
-  { title: 'Правописание', level: 2, category_id: 2 }
+  { title: 'Вычитание', level: 1, category: categories[0], user: users[0] },
+  { title: 'Сложение', level: 2, category: categories[1], user: users[0] },
+  { title: 'Правописание', level: 2, category: categories[1], user: users[0] }
 ])
 
 questions = Question.create([
-  { body: '5+5?', test_id: 1 },
-  { body: '4-2?', test_id: 2 },
-  { body: 'После Ж и Ш пишется И или Ы?', test_id: 3 }
+  { body: '5+5?', test: tests[0] },
+  { body: '4-2?', test: tests[1] },
+  { body: 'После Ж и Ш пишется И или Ы?', test: tests[2] }
 ])
 
 answers = Answer.create([
-  { body: '10', correct: true, question_id: 1 },
-  { body: '2', correct: true, question_id: 2 },
-  { body: 'И', correct: true, question_id: 3 }
+  { body: '10', correct: true, question: questions[0] },
+  { body: '2', correct: true, question: questions[1] },
+  { body: 'И', correct: true, question: questions[2] }
 
 ])
 
