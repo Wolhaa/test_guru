@@ -3,7 +3,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_save :before_save_set_question
+  before_save :before_save_find_question
 
   def test_passed?
     result_percent >= 85
@@ -19,7 +19,6 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
-    self.current_question = next_question
     save!
   end
 
@@ -44,11 +43,11 @@ class TestPassage < ApplicationRecord
   end
 
 
-  def before_save_set_question
+  def before_save_find_question
     if current_question.nil?
       self.current_question = test.questions.first if test.present?
     else
-      next_question
+      self.current_question = next_question
     end
   end
 
