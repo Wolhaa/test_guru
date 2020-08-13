@@ -9,7 +9,7 @@
   <%= form.label :category_id %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
   <%= form.label :user_id %>
-  <%= form.collection_select :user_id, User.all, :id, :login, prompt: true %><br>
+  <%= form.collection_select :user_id, User.all, :id, :email, prompt: true %><br>
 
   <%= form.submit %>
 <% end %>
