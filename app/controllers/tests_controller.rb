@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_test, only: %i[start]
   before_action :find_user, only: :start
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
