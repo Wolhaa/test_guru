@@ -11,8 +11,4 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(user)
     user.admin? ? admin_root_path : super
   end
-
-  def admin?
-    current_user.is_a?(Admin)
-  end
 end
