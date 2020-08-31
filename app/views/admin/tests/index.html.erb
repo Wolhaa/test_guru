@@ -1,8 +1,9 @@
 <h1>All tests</h2>
-
+  <%= link_to 'New test', new_admin_test_path %>
 <table>
   <tr>
     <th>Test</th>
+    <th colspan="4">Action</th>
   </tr>
   <%= render @tests %>
 </table>

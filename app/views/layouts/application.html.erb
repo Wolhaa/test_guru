@@ -6,15 +6,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-    <% if logged_in? %>
-      <p class='nav user'>Welcome, <b><%= current_user.email %></b> Guru
-      [<%= link_to 'Logout', logout_path, method: :delete %>]
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
+
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

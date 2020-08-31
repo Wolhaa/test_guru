@@ -12,7 +12,6 @@ module User::Auth
   def password=(password)
     @password = password
 
-    self.password_digest = digest(password) if password.present?
   end
 
   def authenticate(password)
@@ -24,4 +23,4 @@ module User::Auth
   def digest(password)
     Digest::SHA1.hexdigest(password)
   end
-end 
+end
