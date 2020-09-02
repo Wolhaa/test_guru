@@ -1,4 +1,5 @@
 <tr>
-  <td><h3><%= "Тест #{test.title} (questions: #{test.questions.count})" %></h3></td>
-  <td><%= button_to t('.start'), start_test_path(test) %></td>
+  <td><h5><%= test.title %></h5></td>
+  <td><%= test.questions.count %></td>
+  <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-info' %></td>
 </tr>

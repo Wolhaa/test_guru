@@ -28,7 +28,7 @@ en:
     index:
       header: "Tests list"
       title: "Title"
-      level: "Level"
+      actions: "Actions"
       questions: "Questions"
     test:
       start: "Start"
