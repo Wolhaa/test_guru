@@ -40,7 +40,9 @@ en:
     show:
       header: "Passing the %{title} test"
       next: "Next"
-
+    gist:
+      success: "Gist successfully saved. %{url}"
+      failed: "Error occurred while saving the gist"
   admin:
     restriction: "You are not authorized to view this page"
     nav:
@@ -68,6 +70,14 @@ en:
         delete_confirmation: "Are you sure?"
       form:
         back: "Back"
+    gists:
+      index:
+        header: "Users Gists"
+        question: "Question"
+        url: "Hash"
+        user: "User email"
+      gist:
+        url: "Gist url"          
 
   users:
     sessions:
