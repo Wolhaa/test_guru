@@ -15,10 +15,10 @@
   <body>
     <%= render 'layouts/navbar' %>
 
-    <div class="containet">
-      <%= render 'shared/flash' %>
+
+      <%= flash_messages %>
       <%= yield %>
-    </div>
+
     <%= render 'layouts/footer' %>
   </body>
 </html>

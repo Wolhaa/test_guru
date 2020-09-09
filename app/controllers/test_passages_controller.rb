@@ -13,14 +13,14 @@ class TestPassagesController < ApplicationController
     gist_url = response.html_url
     gist_link = view_context.link_to(gist_url, gist_url, target: :blank)
 
-    flash_options = if service.status_ok?
-                      create_gist!(gist_url)
-                      { notice: t('.success', url: gist_link) }
-                    else
-                      { alert: t('.failed') }
-                    end
+    if service.status_ok?
+      create_gist!(gist_url)
+      flash[:notice] = t('.success', url: gist_link)
+    else
+      flash[:alert] = t('.failed')
+    end
 
-    redirect_to @test_passage, flash_options
+    redirect_to @test_passage
   end
 
   def update

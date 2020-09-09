@@ -1,5 +1,8 @@
 module ApplicationHelper
-  ALERTS = { alert: 'danger', notice: 'primary' }.freeze
+  FLASH_TYPES = {
+    alert: 'warning',
+    notice: 'info'
+  }.freeze
 
   def current_year
     Time.current.year
@@ -9,8 +12,11 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}"
   end
 
+  def flash_messages
+    safe_join(flash.map { |type, message| content_tag :p, message.html_safe, class: flash_type(type), role: 'alert' })
+  end
 
-  def alert_manager(key)
-    ALERTS[key.to_sym] || key
+  def flash_type(type)
+    "alert alert-#{FLASH_TYPES[type.to_sym]}"
   end
 end
