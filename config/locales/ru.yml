@@ -39,6 +39,9 @@ ru:
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
+    gist:
+      success: "Gist успешно сохранен. %{url}"
+      failed: "При сохранении gist произошла ошибка"
 
   admin:
     restriction: "Вы не авторизованы для просмотра этой страницы"
@@ -67,6 +70,14 @@ ru:
         delete_confirmation: "Вы уверены?"
       form:
         back: "Назад"
+    gists:
+      index:
+        header: "Gists пользователей"
+        question: "Вопрос"
+        url: "Hash"
+        user: "Пользователь"
+      gist:
+        url: "Ссылка"
 
   users:
     sessions:
