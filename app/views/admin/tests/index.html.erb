@@ -1,9 +1,16 @@
 <h1><%= t('.header') %></h1>
   <%= link_to t('.new_test'), new_admin_test_path %>
-<table>
-  <tr>
-    <th>t('.title')</th>
-    <th colspan="4">Action</th>
-  </tr>
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th class="sort-by-title pointer">
+         <%= t('.title') %>
+         <%= octicon 'arrow-up', class: 'text-success hide' %>
+         <%= octicon 'arrow-down', class: 'text-success hide' %>
+       </th>
+      <th><%= t('.questions') %></th>
+      <th colspan="4">Action</th>
+    </tr>
+  </thead>
   <%= render @tests %>
 </table>
