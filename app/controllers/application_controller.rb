@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(user)
-    user.admin? ? admin_root_path : super
+    user.admin? ? admin_tests_path : super
   end
 
   def set_locale

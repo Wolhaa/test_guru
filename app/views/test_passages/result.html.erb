@@ -1,5 +1,5 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<p class="<%= @test_passage.success? ? 'success' : 'failure' %>"><%= result_message(@test_passage) %></p>
+<p class="<%= @test_passage.test_passed? ? 'success' : 'failure' %>"><%= result_message(@test_passage) %></p>
 
 <p><%= link_to t('.back'), tests_path %></p>

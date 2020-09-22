@@ -4,4 +4,5 @@ class TestsMailer < ApplicationMailer
     @test = test_passage.test
 
     mail to: @user.email
+  end
 end

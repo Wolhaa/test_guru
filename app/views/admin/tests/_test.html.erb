@@ -1,5 +1,6 @@
 <tr>
-  <td><h3><%= "Test #{test.title} (questions: #{test.questions.count})" %></h3></td>
+  <td><h5><%= test.title %></h5></td>
+  <td><%= test.questions.count %></td>
   <td><%= link_to t('.show'), admin_test_path(test) %></td>
   <td><%= link_to t('.edit'), edit_admin_test_path(test) %> </td>
   <td><%= link_to t('.delete'),

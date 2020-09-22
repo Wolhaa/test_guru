@@ -10,11 +10,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result_percent
-    (100 * self.correct_questions) / test.questions.count
-  end
-
-  def completed?
-    current_question.nil?
+    (100 * self.correct_question) / test.questions.count
   end
 
   def accept!(answer_ids)
@@ -26,6 +22,9 @@ class TestPassage < ApplicationRecord
     completed_questions.count + 1
   end
 
+  def completed?
+    current_question.nil?
+  end
 
   private
 
@@ -38,11 +37,6 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-  def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-
   def before_save_find_question
     if current_question.nil?
       self.current_question = test.questions.first if test.present?
@@ -53,5 +47,9 @@ class TestPassage < ApplicationRecord
 
   def completed_questions
     test.questions.order(:id).where('id < ?', current_question.id)
+  end
+
+  def next_question
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
