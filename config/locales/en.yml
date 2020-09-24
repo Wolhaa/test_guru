@@ -40,6 +40,7 @@ en:
     show:
       header: "Passing the %{title} test"
       next: "Next"
+      question_number: 'question %{q_number}/%{q_count}'
     gist:
       success: "Gist successfully saved. %{url}"
       failed: "Error occurred while saving the gist"
@@ -70,6 +71,8 @@ en:
         delete_confirmation: "Are you sure?"
       form:
         back: "Back"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         header: "Users Gists"
@@ -77,7 +80,7 @@ en:
         url: "Hash"
         user: "User email"
       gist:
-        url: "Gist url"          
+        url: "Gist url"
 
   users:
     sessions:
