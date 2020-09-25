@@ -39,6 +39,7 @@ ru:
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
+      question_number: 'вопрос %{q_number}/%{q_count}'
     gist:
       success: "Gist успешно сохранен. %{url}"
       failed: "При сохранении gist произошла ошибка"
@@ -70,6 +71,8 @@ ru:
         delete_confirmation: "Вы уверены?"
       form:
         back: "Назад"
+      form_inline:
+        submit: "Ок"
     gists:
       index:
         header: "Gists пользователей"

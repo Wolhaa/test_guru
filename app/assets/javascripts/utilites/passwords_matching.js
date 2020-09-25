@@ -38,4 +38,4 @@ function iconHide() {
   document.querySelector('.octicon-key').classList.remove('text-success')
   document.querySelector('.octicon-key').classList.remove('text-danger')
   document.querySelector('.octicon-key').classList.add('hide')
-}
+})
