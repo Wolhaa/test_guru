@@ -98,6 +98,17 @@ ru:
         restrict_dependent_destroy:
           has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
           has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+  feedbacks:
+    new:
+      header: "Форма обратной связи"
+      back: "Назад"
+    create:
+      success: "Письмо успешно отправлено"
+
+  layouts:
+    footer:
+      feedback: 'Форма обратной связи'
+
   date:
     abbr_day_names:
     - Вс
