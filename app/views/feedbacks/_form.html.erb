@@ -4,9 +4,15 @@
       <div class="form-group">
         <%= render 'shared/errors', resource: @feedback %>
           <p>
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :feedback_email %>
+          </p>
+          <p>
+            <%= form.label :title %>
             <%= form.text_field :title, id: :feedback_title %>
           </p>
           <p>
+            <%= form.label :body %>
             <%= form.text_area :body, id: :feedback_body %>
           </p>
           <%= form.submit %>

@@ -12,7 +12,9 @@ ru:
         category_id: "Категория"
     select:
       prompt: "Выберите категорю"
-
+    test_passages:
+      success: "успешно завершен"
+      failed: "провален"    
 
   shared:
     errors:
@@ -36,6 +38,8 @@ ru:
     result:
       header: "Тест %{title} завершен!"
       back: "Назад к тестам"
+      success: "успешно завершен"
+      failed: "провален"
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"

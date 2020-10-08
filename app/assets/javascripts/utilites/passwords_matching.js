@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function () {
   var password = document.getElementById('user_password')
   var password_confirmation = document.getElementById('user_password_confirmation')
 
@@ -8,11 +8,11 @@ document.addEventListener('turbolinks:load', function() {
   }
 })
 
-function checkPassword() {
+function checkPassword () {
   if (!this.value) { iconHide() }
 }
 
-function checkPasswordConfirmation() {
+function checkPasswordConfirmation () {
   var password = document.getElementById('user_password')
 
   if (password.value) {
@@ -22,20 +22,20 @@ function checkPasswordConfirmation() {
   if (!this.value) { iconHide() }
 }
 
-function iconSuccess() {
+function iconSuccess () {
   document.querySelector('.octicon-key').classList.remove('hide')
   document.querySelector('.octicon-key').classList.remove('text-danger')
   document.querySelector('.octicon-key').classList.add('text-success')
 }
 
-function iconDanger() {
+function iconDanger () {
   document.querySelector('.octicon-key').classList.remove('hide')
   document.querySelector('.octicon-key').classList.remove('text-success')
   document.querySelector('.octicon-key').classList.add('text-danger')
 }
 
-function iconHide() {
+function iconHide () {
   document.querySelector('.octicon-key').classList.remove('text-success')
   document.querySelector('.octicon-key').classList.remove('text-danger')
   document.querySelector('.octicon-key').classList.add('hide')
-})
+}

@@ -1,6 +1,8 @@
-class Feedback < ApplicationRecord
-  belongs_to :user
+class Feedback
+  include ActiveModel::Model
 
-  validates :title, :body, presence: true
+  attr_accessor :email, :title, :body
 
+  validates_presence_of :title, :email, :body
+  validates_format_of :email, with: /.+@.+/
 end
