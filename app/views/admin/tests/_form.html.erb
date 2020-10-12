@@ -8,8 +8,9 @@
 
   <%= form.label :category_id %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
-  <%= form.label :user_id %>
-  <%= form.collection_select :user_id, User.all, :id, :email, prompt: true %><br>
+
+  <%= form.label :level %>
+  <%= form.number_field :level, id: :test_level, class: "form-conrtrol" %><br>
 
   <%= form.submit %>
 <% end %>

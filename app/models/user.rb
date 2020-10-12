@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :gists, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   def tests_by_level(level)
     tests.where(level: level)

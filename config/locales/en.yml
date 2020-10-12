@@ -90,3 +90,14 @@ en:
   test_mailer:
     completed_test:
       subject: "You just completed the TestGuru test"
+
+  feedbacks:
+    new:
+      header: "Feedback form"
+      back: "Back"
+    create:
+      success: "Email successfully sent"
+
+  layouts:
+    footer:
+      feedback: 'Feed back'
