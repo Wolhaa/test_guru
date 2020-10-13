@@ -2,11 +2,18 @@ en:
   activerecord:
     models:
       test: "Test"
+      badge: "Badge"
 
     attributes:
       test:
         title: "Title"
         category_id: "Category"
+      badges:
+        title: "Title"
+        image_path: "Image"
+        rule: "Assigment rule"
+        level: "Level"
+        category: "Category"
 
     errors:
       messages:

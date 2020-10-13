@@ -14,7 +14,7 @@ ru:
       prompt: "Выберите категорю"
     test_passages:
       success: "успешно завершен"
-      failed: "провален"    
+      failed: "провален"
 
   shared:
     errors:
@@ -85,7 +85,30 @@ ru:
         user: "Пользователь"
       gist:
         url: "Ссылка"
-
+    badges:
+      index:
+        header: "Доступные награды"
+        title: "Название"
+        image_path: "Иконка"
+        rule: "Правило награждения"
+        actions: "Действия"
+        new_badge: "Новая награда"
+      show:
+        title: "Награда %{badge_title}"
+        rule: "Правило награждения"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Добавление награды"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title}"
+        back: "Назад"
+      badge:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
   users:
     sessions:
       create:
@@ -112,7 +135,10 @@ ru:
   layouts:
     footer:
       feedback: 'Форма обратной связи'
-
+  badges:
+    index:
+      header: "Ваши награды:"
+      available: "Все доступные награды:"
   date:
     abbr_day_names:
     - Вс
