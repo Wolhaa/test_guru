@@ -30,13 +30,16 @@ en:
       title: "Title"
       actions: "Actions"
       questions: "Questions"
+      time_limit: "Time limit"
     test:
       start: "Start"
+      time_limit: "%{time} min"
 
   test_passages:
     result:
       header: "The %{title} test was completed!"
       back: "Back to tests"
+      time_failed: "failed. Time's out"
     show:
       header: "Passing the %{title} test"
       next: "Next"
@@ -60,6 +63,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         new_test: "New test"
+        time_limit: "Time limit"
       new:
         header: "Create new test"
       edit:
@@ -69,6 +73,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         delete_confirmation: "Are you sure?"
+        time_limit: "%{time} min"
       form:
         back: "Back"
       form_inline:

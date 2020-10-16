@@ -6,4 +6,8 @@ module TestsHelper
       t('.update')
     end
   end
+
+  def test_time_limit(test)
+    test.time_limit ? t('.time_limit', time: test.time_limit) : t('.unlimited')
+  end
 end

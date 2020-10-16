@@ -8,6 +8,7 @@ en:
       test:
         title: "Title"
         category_id: "Category"
+        time_limit: "Time limit"        
       badges:
         title: "Title"
         image_path: "Image"

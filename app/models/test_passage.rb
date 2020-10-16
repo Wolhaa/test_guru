@@ -26,6 +26,18 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def time_limit_test?
+    test.time_limit.present?
+  end
+
+  def remaining_seconds
+    ((created_at + test.time_limit.minutes) - Time.current).to_i
+  end  
+
+  def time_out?
+    (created_at + test.time_limit.minutes < Time.current) if time_limit_test?
+  end
+
   private
 
 

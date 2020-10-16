@@ -30,8 +30,10 @@ ru:
       title: "Название"
       actions: "Действие"
       questions: "Кол-во вопросов"
+      time_limit: "Время на прохождение"
     test:
       start: "Начать"
+      time_limit: "%{time} мин"
 
 
   test_passages:
@@ -40,6 +42,7 @@ ru:
       back: "Назад к тестам"
       success: "успешно завершен"
       failed: "провален"
+      time_failed: "провален, время вышло"
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
@@ -64,6 +67,7 @@ ru:
         questions: "Кол-во вопросов"
         actions: "Действия"
         new_test: "Создать новый тест"
+        time_limit: "Время на прохождение"
       edit:
         header: "Редактировать %{title} тест"
       new:
@@ -73,6 +77,7 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         delete_confirmation: "Вы уверены?"
+        time_limit: "%{time} мин"
       form:
         back: "Назад"
       form_inline:

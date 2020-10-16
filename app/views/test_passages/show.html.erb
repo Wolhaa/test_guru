@@ -1,4 +1,7 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<p>
+  <%= render 'timer' %>
+</p>
 
 <b>
   <%= @test_passage.current_question.body %>

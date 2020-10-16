@@ -13,6 +13,7 @@ ru:
         rule: "Правило награждения"
         level: "Уровень"
         category: "Категория"
+        time_limit: "Время на прохождение"        
 
     errors:
       messages:
