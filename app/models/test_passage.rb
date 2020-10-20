@@ -15,6 +15,8 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
+    self.current_question = nil if time_out?
+
     save!
   end
 
@@ -32,7 +34,7 @@ class TestPassage < ApplicationRecord
 
   def remaining_seconds
     ((created_at + test.time_limit.minutes) - Time.current).to_i
-  end  
+  end
 
   def time_out?
     (created_at + test.time_limit.minutes < Time.current) if time_limit_test?

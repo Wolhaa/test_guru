@@ -1,7 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_test_passage, only: %i[show update result gist]
-  before_action :check_passing_time, only: :update
 
   def show; end
 
@@ -25,14 +24,18 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-    if @test_passage.completed?
-      awarded_badges! if @test_passage.test_passed?
-
-      TestsMailer.completed_test(@test_passage).deliver_now
+    if params[:answer_ids].nil?
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      @test_passage.accept!(params[:answer_ids])
+      if @test_passage.completed?
+        awarded_badges! if @test_passage.test_passed?
+
+        TestsMailer.completed_test(@test_passage).deliver_now
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     end
   end
 
@@ -45,11 +48,6 @@ class TestPassagesController < ApplicationController
 
   def create_gist!(gist_url)
     current_user.gists.create(question: @test_passage.current_question, url: gist_url)
-  end
-
-  def check_passing_time
-    return unless @test_passage.time_out?
-    redirect_to result_test_passing_path(@test_passage)
   end
 
   def awarded_badges!

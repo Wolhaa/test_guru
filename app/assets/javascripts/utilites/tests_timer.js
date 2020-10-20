@@ -15,9 +15,14 @@ function countDown (timer) {
     if (limitInSeconds == 0) {
       clearInterval(timerId)
       alert('Время вышло')
-      window.location.replace(window.location + '/result')
+      submitForm()
     }
   }, 1000)
+}
+
+function submitForm () {
+  var formTag = document.querySelector('#test-passage-form')
+  if (formTag) { formTag.submit() }
 }
 
 function showRemainigTime (seconds, timer) {
