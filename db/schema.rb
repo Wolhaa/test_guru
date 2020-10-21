@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_072235) do
+ActiveRecord::Schema.define(version: 2020_10_21_094931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 2020_10_15_072235) do
     t.string "title", null: false
     t.text "rule", null: false
     t.text "image_path"
-    t.integer "level"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "rule_value", default: "", null: false
     t.index ["category_id"], name: "index_badges_on_category_id"
   end
 
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_072235) do
     t.integer "correct_question", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "passed", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -119,7 +120,6 @@ ActiveRecord::Schema.define(version: 2020_10_15_072235) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "categories"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"

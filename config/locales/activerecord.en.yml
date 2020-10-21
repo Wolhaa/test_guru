@@ -8,7 +8,7 @@ en:
       test:
         title: "Title"
         category_id: "Category"
-        time_limit: "Time limit"        
+        time_limit: "Time limit"
       badges:
         title: "Title"
         image_path: "Image"
@@ -19,3 +19,4 @@ en:
     errors:
       messages:
         blank: "can't be blank"
+        rule: "type not permitted"

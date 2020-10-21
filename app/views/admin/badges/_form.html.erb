@@ -1,29 +1,27 @@
 <%= form_with model: [:admin, @badge], local: true do |form| %>
   <%= render 'shared/errors', resource: @badge %>
     <p>
-    <%= form.text_field :title, id: :badge_title, class: "form-control" %>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, id: :badge_title, class: "form-control" %>
     </p>
     <p>
-    <%= form.select :image_path,
+      <%= form.label :image %><br>
+      <%= form.select :image_path,
                     options_for_select(Badge.images),
                     class: "form-control" %>
     </p>
     <p>
-    <%= form.select :rule,
-                    options_for_select(Badge::BADGES_TYPE),
+      <%= form.label :rule_type %><br>
+      <%= form.select :rule,
+                    options_for_select(BadgeService::BADGES_TYPE),
+                    {prompt: 'Выбрать из списка'},
                     class: "form-control rule" %>
     </p>
     <p>
-    <fieldset disabled="disabled" class="fieldset_level">
-      <%= form.number_field :level, id: :test_level, class: "form-conrtrol" %><br>
-    </fieldset>
-    </p>
-    <p>
-    <fieldset disabled="disabled" class="fieldset_category">
-      <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
-    </fieldset>
+      <%= form.label :rule_value %><br>
+      <%= form.select :rule_value, BadgeService::RULE_VALUES, {prompt: 'Выбрать из списка'}, class: "form-control" %>
     </p>
     <p>
     <%= form.submit class: "btn btn-primary" %>
-    </p>    
+    </p>
 <% end %>

@@ -15,6 +15,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
+    self.passed = true if test_passed?
     self.current_question = nil if time_out?
 
     save!
