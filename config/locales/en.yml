@@ -1,6 +1,9 @@
 en:
   hello: "Hello world"
-
+  rules:
+    all_category_tests: "All category tests"
+    first_attempt: "First attempt"
+    all_level_tests: "All level tests"
   helpers:
     test:
       create: "Create test"

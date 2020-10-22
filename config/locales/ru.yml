@@ -1,6 +1,9 @@
 ru:
   hello: 'Привет, Мир!'
-
+  rules:
+    all_category_tests: "Все тесты категории"
+    first_attempt: "С первой попытки"
+    all_level_tests: "Все тесты уровня"
   helpers:
     test:
       create: "Создать тест"

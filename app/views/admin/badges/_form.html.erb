@@ -11,16 +11,22 @@
                     class: "form-control" %>
     </p>
     <p>
-      <%= form.label :rule_type %><br>
+      <%= form.label :rule %><br>
       <%= form.select :rule,
-                    options_for_select(BadgeService::BADGES_TYPE),
+                    rules_for_select,
                     {prompt: 'Выбрать из списка'},
                     class: "form-control rule" %>
     </p>
-    <p>
-      <%= form.label :rule_value %><br>
-      <%= form.select :rule_value, BadgeService::RULE_VALUES, {prompt: 'Выбрать из списка'}, class: "form-control" %>
-    </p>
+  <p>
+  <fieldset disabled="disabled" class="fieldset_level">
+    <%= form.number_field :level, id: :test_level, class: "form-conrtrol" %><br>
+  </fieldset>
+  </p>
+  <p>
+  <fieldset disabled="disabled" class="fieldset_category">
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
+  </fieldset>
+  </p>
     <p>
     <%= form.submit class: "btn btn-primary" %>
     </p>

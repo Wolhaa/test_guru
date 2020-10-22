@@ -16,13 +16,14 @@ class BadgeService
   end
 
   def give_badges
-    Badge.all.map { |badge| send("#{badge.rule}_award", badge) }.compact
+    Badge.all.select { |badge| send("#{badge.rule}_award", badge) }
+    byebug
   end
 
   private
 
   def all_category_tests_award(badge)
-    badge if all_category_tests?(badge.rule_value) && badge.rule_value == @test_passage.test.category.title
+    badge if badge.rule_value == @test_passage.test.category.title && all_category_tests?(badge.rule_value)
   end
 
   def first_attempt_award(badge)
@@ -30,15 +31,21 @@ class BadgeService
   end
 
   def all_level_tests_award(badge)
+    return false unless @test_passage.passed = false
     badge if all_level_tests?(badge.rule_value) && badge.rule_value.to_i == @test_passage.test.level
   end
 
   def all_category_tests?(category)
-    Test.with_questions.by_category(category).count == @user.tests.where('test_passages.passed = ?', true).by_category(category).count
+    passed_tests_by_category = @user.tests.where('test_passages.passed = ?', true).by_category(category)
+    uniq_passed_tests_by_category = passed_tests_by_category.uniq { |test| test[:id] }
+    byebug
+    Test.by_category(category).count == uniq_passed_tests_by_category.count
   end
 
   def all_level_tests?(level)
-    Test.with_questions.by_level(level.to_i).count == @user.tests.where('test_passages.passed = ?', true).by_level(level.to_i).count
+    passed_tests_by_level = @user.tests.where('test_passages.passed = ?', true).by_level(level.to_i)
+    uniq_passed_tests_by_level = passed_tests_by_level.uniq { |test| test[:id] }
+    Test.by_level(level.to_i).count == uniq_passed_tests_by_level.count
   end
 
   def first_attempt?(attempts)

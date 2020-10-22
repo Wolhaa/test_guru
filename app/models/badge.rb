@@ -4,7 +4,9 @@ class Badge < ApplicationRecord
 
   before_save :set_default_image_path, unless: :image_path?
 
-  validates :title, :rule_value, presence: true
+  validates :title, :image_path, :rule_value, presence: true
+  validates :rule, presence: true, uniqueness: { scope: :rule_value }
+  validates :rule, inclusion: { in: BadgeService::BADGES_TYPE }
 
   def self.images
     images_path = 'app/assets/images/'

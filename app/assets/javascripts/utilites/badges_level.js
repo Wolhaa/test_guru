@@ -9,11 +9,11 @@ function setVisible () {
   var categoryFiled = document.querySelector('.fieldset_category')
 
   switch (this.value) {
-    case 'all_level_tests':
+    case 'Все тесты уровня':
       categoryFiled.disabled = true
       levelFiled.disabled = false
       break
-    case 'all_category_tests':
+    case 'Все тесты категории':
       categoryFiled.disabled = false
       levelFiled.disabled = true
       break
