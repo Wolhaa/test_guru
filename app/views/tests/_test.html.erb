@@ -1,5 +1,6 @@
 <tr>
   <td><h5><%= test.title %></h5></td>
   <td><%= test.questions.count %></td>
+  <td><%= test_time_limit(test) %></td>
   <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-info' %></td>
 </tr>

@@ -1,4 +1,7 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<p>
+  <%= render 'timer' %>
+</p>
 
 <b>
   <%= @test_passage.current_question.body %>
@@ -15,7 +18,7 @@
   <% end %>
 </div>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, id: 'test-passage-form', method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>

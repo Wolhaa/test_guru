@@ -2,13 +2,20 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      badge: "Награда"
 
     attributes:
       test:
         title: "Название"
         category_id: "Категория"
         level: "Уровень сложности"
+        image_path: "Картинка"
+        rule: "Правило награждения"
+        level: "Уровень"
+        category: "Категория"
+        time_limit: "Время на прохождение"
 
     errors:
       messages:
         blank: "не может быть пустым"
+        rule: "не входит в правила"

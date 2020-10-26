@@ -1,6 +1,9 @@
 ru:
   hello: 'Привет, Мир!'
-
+  rules:
+    all_category_tests: "Все тесты категории"
+    first_attempt: "С первой попытки"
+    all_level_tests: "Все тесты уровня"
   helpers:
     test:
       create: "Создать тест"
@@ -14,7 +17,7 @@ ru:
       prompt: "Выберите категорю"
     test_passages:
       success: "успешно завершен"
-      failed: "провален"    
+      failed: "провален"
 
   shared:
     errors:
@@ -30,8 +33,10 @@ ru:
       title: "Название"
       actions: "Действие"
       questions: "Кол-во вопросов"
+      time_limit: "Время на прохождение"
     test:
       start: "Начать"
+      time_limit: "%{time} мин"
 
 
   test_passages:
@@ -40,6 +45,7 @@ ru:
       back: "Назад к тестам"
       success: "успешно завершен"
       failed: "провален"
+      time_failed: "провален, время вышло"
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
@@ -64,6 +70,7 @@ ru:
         questions: "Кол-во вопросов"
         actions: "Действия"
         new_test: "Создать новый тест"
+        time_limit: "Время на прохождение"
       edit:
         header: "Редактировать %{title} тест"
       new:
@@ -73,6 +80,7 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         delete_confirmation: "Вы уверены?"
+        time_limit: "%{time} мин"
       form:
         back: "Назад"
       form_inline:
@@ -85,7 +93,30 @@ ru:
         user: "Пользователь"
       gist:
         url: "Ссылка"
-
+    badges:
+      index:
+        header: "Доступные награды"
+        title: "Название"
+        image_path: "Иконка"
+        rule: "Правило награждения"
+        actions: "Действия"
+        new_badge: "Новая награда"
+      show:
+        title: "Награда %{badge_title}"
+        rule: "Правило награждения"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Добавление награды"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title}"
+        back: "Назад"
+      badge:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
   users:
     sessions:
       create:
@@ -112,7 +143,10 @@ ru:
   layouts:
     footer:
       feedback: 'Форма обратной связи'
-
+  badges:
+    index:
+      header: "Ваши награды:"
+      available: "Все доступные награды:"
   date:
     abbr_day_names:
     - Вс
